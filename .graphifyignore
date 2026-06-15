@@ -1,0 +1,33 @@
+# Do not analyze full Veins folders with Graphify
+/veins/
+/veins_catch/
+/veins_testsims/
+
+# OMNeT++ generated outputs
+/results/
+/out/
+/build/
+/debug/
+/release/
+/oppbuild/
+/.oppbuild/
+
+# Simulation result files
+*.sca
+*.vec
+*.vci
+*.elog
+*.anf
+*.stat
+
+# Compiled files
+*.o
+*.so
+*.a
+*.exe
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*~

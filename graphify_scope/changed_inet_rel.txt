@@ -1,0 +1,6 @@
+.settings/language.settings.xml
+src/inet/networklayer/configurator/ipv4/HostAutoConfigurator.cc
+src/inet/networklayer/configurator/ipv4/HostAutoConfigurator.h
+src/inet/networklayer/configurator/ipv4/MyHostAutoConfigurator.cc
+src/inet/networklayer/configurator/ipv4/MyHostAutoConfigurator.h
+src/inet/networklayer/configurator/ipv4/MyHostAutoConfigurator.ned

@@ -1,0 +1,48 @@
+<config>
+   <interface hosts="Scenariov6g.upf" names="ppp0" address="10.5.0.1" netmask="255.255.255.0" metric="1"/>
+   <interface hosts="Scenariov6g.gNodeB1" names="pppIf" address="10.5.0.2" netmask="255.255.255.0" metric="1"/>
+   <interface hosts="Scenariov6g.upf" names="ppp1" address="192.168.0.1" netmask="255.255.255.0" metric="1"/>
+   <interface hosts="Scenariov6g.router" names="ppp0" address="192.168.0.2" netmask="255.255.255.0" metric="1"/>
+   <interface hosts="Scenariov6g.upf" names="pppIf" address="192.168.1.1" netmask="255.255.255.0" metric="1"/>
+   <interface hosts="Scenariov6g.gNodeB1" names="cellular" address="192.168.2.1" netmask="255.255.255.0" metric="1"/>
+   <interface hosts="Scenariov6g.gNodeB1" names="pppMEHostIf" address="192.168.3.1" netmask="255.255.255.0" metric="1"/>
+   <interface hosts="Scenariov6g.router" names="eth0" address="10.0.0.1" netmask="255.255.255.0" metric="1"/>
+   <interface hosts="Scenariov6g.router" names="eth1" address="10.1.0.1" netmask="255.255.255.0" metric="1"/>
+   <interface hosts="Scenariov6g.server" names="eth0" address="10.1.0.2" netmask="255.255.255.0" metric="1"/>
+   <multicast-group hosts="Scenariov6g.upf" interfaces="ppp0" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="Scenariov6g.gNodeB1" interfaces="pppIf" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="Scenariov6g.upf" interfaces="ppp1" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="Scenariov6g.router" interfaces="ppp0" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="Scenariov6g.upf" interfaces="pppIf" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="Scenariov6g.gNodeB1" interfaces="cellular" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="Scenariov6g.gNodeB1" interfaces="pppMEHostIf" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="Scenariov6g.router" interfaces="eth0" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="Scenariov6g.router" interfaces="eth1" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="Scenariov6g.server" interfaces="eth0" address="224.0.0.1"/>
+   <wireless interfaces="Scenariov6g.gNodeB1%cellular"/>
+   <route hosts="Scenariov6g.upf" destination="10.5.0.2" netmask="255.255.255.255" gateway="*" interface="ppp0" metric="0"/>
+   <route hosts="Scenariov6g.upf" destination="192.168.0.2" netmask="255.255.255.255" gateway="*" interface="ppp1" metric="0"/>
+   <route hosts="Scenariov6g.upf" destination="10.5.0.0" netmask="255.255.255.0" gateway="*" interface="ppp0" metric="1"/>
+   <route hosts="Scenariov6g.upf" destination="192.168.0.0" netmask="255.255.255.0" gateway="*" interface="ppp1" metric="1"/>
+   <route hosts="Scenariov6g.upf" destination="192.168.1.0" netmask="255.255.255.0" gateway="*" interface="pppIf" metric="1"/>
+   <route hosts="Scenariov6g.upf" destination="192.168.2.0" netmask="255.255.254.0" gateway="10.5.0.2" interface="ppp0" metric="0"/>
+   <route hosts="Scenariov6g.upf" destination="10.0.0.0" netmask="255.254.0.0" gateway="192.168.0.2" interface="ppp1" metric="0"/>
+   <route hosts="Scenariov6g.upf" destination="127.0.0.0" netmask="255.0.0.0" gateway="*" interface="lo0" metric="1"/>
+   <route hosts="Scenariov6g.gNodeB1" destination="10.5.0.1" netmask="255.255.255.255" gateway="*" interface="pppIf" metric="0"/>
+   <route hosts="Scenariov6g.gNodeB1" destination="10.5.0.0" netmask="255.255.255.0" gateway="*" interface="pppIf" metric="1"/>
+   <route hosts="Scenariov6g.gNodeB1" destination="192.168.2.0" netmask="255.255.255.0" gateway="*" interface="cellular" metric="1"/>
+   <route hosts="Scenariov6g.gNodeB1" destination="192.168.3.0" netmask="255.255.255.0" gateway="*" interface="pppMEHostIf" metric="1"/>
+   <route hosts="Scenariov6g.gNodeB1" destination="*" netmask="*" gateway="10.5.0.1" interface="pppIf" metric="0"/>
+   <route hosts="Scenariov6g.router" destination="192.168.0.1" netmask="255.255.255.255" gateway="*" interface="ppp0" metric="0"/>
+   <route hosts="Scenariov6g.router" destination="10.0.0.0" netmask="255.255.255.0" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="Scenariov6g.router" destination="10.0.0.0" netmask="255.255.255.0" gateway="*" interface="eth0" metric="1"/>
+   <route hosts="Scenariov6g.router" destination="10.1.0.0" netmask="255.255.255.0" gateway="*" interface="eth1" metric="0"/>
+   <route hosts="Scenariov6g.router" destination="10.1.0.0" netmask="255.255.255.0" gateway="*" interface="eth1" metric="1"/>
+   <route hosts="Scenariov6g.router" destination="192.168.0.0" netmask="255.255.255.0" gateway="*" interface="ppp0" metric="1"/>
+   <route hosts="Scenariov6g.router" destination="127.0.0.0" netmask="255.0.0.0" gateway="*" interface="lo0" metric="1"/>
+   <route hosts="Scenariov6g.router" destination="*" netmask="*" gateway="192.168.0.1" interface="ppp0" metric="0"/>
+   <route hosts="Scenariov6g.server" destination="10.1.0.0" netmask="255.255.255.0" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="Scenariov6g.server" destination="10.1.0.0" netmask="255.255.255.0" gateway="*" interface="eth0" metric="1"/>
+   <route hosts="Scenariov6g.server" destination="127.0.0.0" netmask="255.0.0.0" gateway="*" interface="lo0" metric="1"/>
+   <route hosts="Scenariov6g.server" destination="*" netmask="*" gateway="10.1.0.1" interface="eth0" metric="0"/>
+</config>

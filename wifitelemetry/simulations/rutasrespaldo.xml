@@ -1,0 +1,11 @@
+<config>
+    <interface hosts='rsu[*]' names='wlan0' address='10.0.0.2' netmask='255.255.0.0'/>
+    <interface hosts='rsu[*]' names='eth0' address='10.1.0.1' netmask='255.255.255.0'/>
+    <interface hosts='**' address='10.x.x.x' netmask='255.x.x.x'/>
+    
+    <route hosts="router" destination="10.0.0.0" netmask="255.255.0.0" gateway="10.1.0.1" interface="eth0"/>
+    
+    <route hosts="rsu[*]" destination="10.0.0.0" netmask="255.255.0.0" gateway="*" interface="wlan0"/>
+    
+    <autoroute metric="hopCount"/>
+</config>

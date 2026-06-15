@@ -1,0 +1,52 @@
+<config>
+    <interface hosts='router' names='eth0' address='10.0.0.1' netmask='255.255.255.0'/> 
+    <interface hosts='router' names='eth1' address='10.1.0.1' netmask='255.255.255.0'/> 
+    <interface hosts='router' names='eth2' address='10.2.0.1' netmask='255.255.255.0'/> 
+    <interface hosts='router' names='ppp0' address='10.10.0.1' netmask='255.255.255.0'/> 
+
+    <interface hosts='server' names='eth0' address='10.1.0.2' netmask='255.255.255.0'/>
+    <interface hosts='server' names='eth1' address='10.2.0.2' netmask='255.255.255.0'/>
+    
+    <interface hosts='upf' names='pppIf' address='10.10.0.2' netmask='255.255.255.0'/> 
+    <interface hosts='upf' names='tun*' address='10.5.1.1' netmask='255.255.255.0'/> 
+    
+    <interface hosts='upf' names='ppp0' address='10.6.1.1' netmask='255.255.255.0'/> 
+    <interface hosts='gNodeB1' names='ppp0' address='10.6.1.2' netmask='255.255.255.0'/>
+    
+    <interface hosts='upf' names='ppp1' address='10.6.2.1' netmask='255.255.255.0'/> 
+    <interface hosts='gNodeB2' names='ppp0' address='10.6.2.2' netmask='255.255.255.0'/>
+    
+    <interface hosts='upf' names='ppp2' address='10.6.3.1' netmask='255.255.255.0'/> 
+    <interface hosts='gNodeB3' names='ppp0' address='10.6.3.2' netmask='255.255.255.0'/>
+    
+    <interface hosts='upf' names='ppp3' address='10.6.4.1' netmask='255.255.255.0'/> 
+    <interface hosts='gNodeB4' names='ppp0' address='10.6.4.2' netmask='255.255.255.0'/>
+    
+    <interface hosts='upf' names='ppp4' address='10.6.5.1' netmask='255.255.255.0'/> 
+    <interface hosts='gNodeB5' names='ppp0' address='10.6.5.2' netmask='255.255.255.0'/>
+    
+    <interface hosts='upf' names='ppp5' address='10.6.6.1' netmask='255.255.255.0'/> 
+    <interface hosts='gNodeB6' names='ppp0' address='10.6.6.2' netmask='255.255.255.0'/>
+    
+    <interface hosts='upf' names='ppp6' address='10.6.7.1' netmask='255.255.255.0'/> 
+    <interface hosts='gNodeB7' names='ppp0' address='10.6.7.2' netmask='255.255.255.0'/>
+    
+    <interface hosts='upf' names='ppp7' address='10.6.8.1' netmask='255.255.255.0'/> 
+    <interface hosts='gNodeB8' names='ppp0' address='10.6.8.2' netmask='255.255.255.0'/>
+
+    <interface hosts='car*' names='cellular*' address='10.5.1.x' netmask='255.255.255.0'/>
+    <interface hosts='car*' names='wlan*' address='10.0.0.x' netmask='255.255.255.0'/>
+
+    <interface hosts='**' address='10.99.x.x' netmask='255.255.255.0'/>
+
+    <route hosts="router" destination="10.5.1.0" netmask="255.255.255.0" gateway="10.10.0.2" interface="ppp0"/>
+    <route hosts="router" destination="10.0.0.0" netmask="255.255.255.0" interface="eth0"/>
+
+    <route hosts="upf" destination="10.1.0.0" netmask="255.255.255.0" gateway="10.10.0.1" interface="pppIf"/>
+    <route hosts="upf" destination="10.2.0.0" netmask="255.255.255.0" gateway="10.10.0.1" interface="pppIf"/>
+
+    <route hosts="server" destination="10.5.1.0" netmask="255.255.255.0" gateway="10.2.0.1" interface="eth1"/>
+    <route hosts="server" destination="10.0.0.0" netmask="255.255.255.0" gateway="10.1.0.1" interface="eth0"/>
+
+    <autoroute metric="hopCount"/>
+</config>

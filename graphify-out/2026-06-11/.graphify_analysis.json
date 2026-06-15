@@ -1,0 +1,79 @@
+{
+  "communities": {
+    "0": [
+      "claude_graphify",
+      "claude_graphify_out_graph_report_md",
+      "claude_graphify_out_wiki_index_md",
+      "claude_graphify_update"
+    ],
+    "1": [
+      "claude_graphify_explain",
+      "claude_graphify_out_graph_json",
+      "claude_graphify_path",
+      "claude_graphify_query"
+    ]
+  },
+  "cohesion": {
+    "0": 0.5,
+    "1": 0.5
+  },
+  "gods": [
+    {
+      "id": "claude_graphify",
+      "label": "graphify",
+      "degree": 4
+    },
+    {
+      "id": "claude_graphify_out_graph_json",
+      "label": "graphify-out/graph.json",
+      "degree": 4
+    },
+    {
+      "id": "claude_graphify_query",
+      "label": "graphify query",
+      "degree": 1
+    },
+    {
+      "id": "claude_graphify_path",
+      "label": "graphify path",
+      "degree": 1
+    },
+    {
+      "id": "claude_graphify_explain",
+      "label": "graphify explain",
+      "degree": 1
+    },
+    {
+      "id": "claude_graphify_update",
+      "label": "graphify update",
+      "degree": 1
+    },
+    {
+      "id": "claude_graphify_out_wiki_index_md",
+      "label": "graphify-out/wiki/index.md",
+      "degree": 1
+    },
+    {
+      "id": "claude_graphify_out_graph_report_md",
+      "label": "graphify-out/GRAPH_REPORT.md",
+      "degree": 1
+    }
+  ],
+  "surprises": [
+    {
+      "source": "graphify",
+      "target": "graphify-out/graph.json",
+      "source_files": [
+        "CLAUDE.md",
+        "CLAUDE.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "note": "Bridges community 0 \u2192 community 1"
+    }
+  ],
+  "tokens": {
+    "input": 703,
+    "output": 1530
+  }
+}

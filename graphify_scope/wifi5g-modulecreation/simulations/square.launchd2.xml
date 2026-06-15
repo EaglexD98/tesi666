@@ -1,0 +1,5 @@
+<launch>
+  <copy file="square.net.xml"/>
+  <copy file="square.rou.xml"/>
+  <copy file="square.sumocfg" type="config"/>
+</launch>

@@ -1,0 +1,38 @@
+# Ignore generated outputs
+results/
+out/
+build/
+.oppbuild/
+debug/
+release/
+
+# Ignore simulation output files
+*.sca
+*.vec
+*.vci
+*.elog
+*.anf
+*.stat
+*.csv
+
+# Ignore binaries and compiled files
+*.o
+*.so
+*.a
+*.exe
+*.dll
+*.class
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.bak
+*~
+
+# Ignore images to avoid unnecessary semantic analysis
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp

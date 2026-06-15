@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-02-02 10:24:36 by Eclipse SUMO sumo Version 1.18.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="/home/eagle/2026-02-02-10-24-26/osm.net.xml.gz"/>
+        <route-files value="/home/eagle/2026-02-02-10-24-26/trips.trips.xml"/>
+        <additional-files value="/home/eagle/2026-02-02-10-24-26/osm_stops.add.xml"/>
+    </input>
+
+    <output>
+        <vehroute-output value="/home/eagle/2026-02-02-10-24-26/vehroutes.xml"/>
+        <stop-output value="/home/eagle/2026-02-02-10-24-26/stopinfos.xml"/>
+    </output>
+
+    <time>
+        <begin value="0.0"/>
+    </time>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+
+    <routing>
+        <device.rerouting.adaptation-interval value="0"/>
+    </routing>
+
+    <report>
+        <aggregate-warnings value="5"/>
+        <error-log value="/home/eagle/2026-02-02-10-24-26/trips.trips.xml.errorlog"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<stops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/stopinfo_file.xsd">
+    <stopinfo id="0_bus_N1594:0" type="pt_bus" lane="120516824#2_0" pos="18.09" parking="0" started="337.00" ended="367.00" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" busStop="1351215492"/>
+    <stopinfo id="2_bus_582:0" type="pt_bus" lane="1234486356_0" pos="67.11" parking="0" started="404.00" ended="434.00" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" busStop="2272196074"/>
+    <stopinfo id="1_bus_N1594:1" type="pt_bus" lane="120516824#2_0" pos="18.08" parking="0" started="465.00" ended="495.00" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" busStop="1351215492"/>
+    <stopinfo id="3_bus_582:1" type="pt_bus" lane="1234486356_0" pos="67.11" parking="0" started="831.00" ended="861.00" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" busStop="2272196074"/>
+</stops>

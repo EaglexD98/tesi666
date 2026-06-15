@@ -1,0 +1,6 @@
+<launch>
+  <copy file="wifirec.net.xml"/>
+  <copy file="wifirec.rou.xml"/>
+  <copy file="wifirec.add.xml"/>
+  <copy file="wifirec.sumocfg" type="config"/>
+</launch>

@@ -1,0 +1,144 @@
+# ============================================================
+# OMNeT++ / INET / Simu5G / Veins - Git ignore
+# Ignora resultados, builds y archivos temporales
+# ============================================================
+
+# ----------------------------
+# Simulation results
+# ----------------------------
+results/
+result/
+out/
+output/
+outputs/
+simulations/**/results/
+simulations/**/result/
+simulations/**/out/
+
+*.sca
+*.vec
+*.vci
+*.vci2
+*.elog
+*.anf
+*.csv
+*.jsonl
+
+# Si tus CSV/JSON son resultados generados, déjalos ignorados.
+# Si tienes CSV/JSON de configuración necesarios, agrégalos manualmente con:
+# git add -f archivo.csv
+
+# ----------------------------
+# OMNeT++ generated files
+# ----------------------------
+Makefile
+makefrag~
+*.oppfeatures
+.oppbuildspec
+.out/
+out/
+out-*/
+
+# ----------------------------
+# C/C++ build artifacts
+# ----------------------------
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+*.lib
+*.lo
+*.la
+*.lai
+*.class
+
+# Debug / generated binaries
+*_dbg
+*_release
+*.dbg
+
+# ----------------------------
+# Logs and temporary files
+# ----------------------------
+*.log
+*.err
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+# IDE / editor files
+# ----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Eclipse / OMNeT++ IDE metadata
+.metadata/
+.settings/
+
+# Normalmente estos SÍ pueden ser útiles si compartes el proyecto OMNeT++.
+# Por eso NO los ignoro por defecto:
+# .project
+# .cproject
+# .nedfolders
+
+# ----------------------------
+# Python cache / scripts auxiliares
+# ----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# ----------------------------
+# SUMO generated outputs
+# ----------------------------
+*.rou.alt.xml
+*.tripinfo.xml
+*.emission.xml
+*.fcd.xml
+*.statistic.xml
+*.summary.xml
+*.queue.xml
+*.netstate.xml
+
+# ----------------------------
+# Graphify / Claude / analysis generated files
+# ----------------------------
+.graphify/
+graph.json
+graph.pkl
+graph.graphml
+graph.gexf
+graph_output/
+claude-output/
+response*.md
+
+# Mantén CLAUDE.md si lo usas como instrucciones del proyecto.
+# CLAUDE.md
+
+# ----------------------------
+# Large external frameworks if they are only references
+# Descomenta SOLO si tu proyecto referencia estas carpetas
+# pero no quieres versionarlas dentro de este repo.
+# ----------------------------
+# inet/
+# INET/
+# simu5G/
+# Simu5G/
+# veins/
+# Veins/
+# references/
+# References/

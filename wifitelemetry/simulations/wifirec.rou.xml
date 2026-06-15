@@ -1,0 +1,17 @@
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vType id="DEFAULT_VEHTYPE" maxSpeed="16.67" vClass="bus"/>
+    <vType id="t_0" vClass="bus"/>
+
+    <route id="r_0" edges="E0 E1 E2 E3" repeat="100">
+        <stop busStop="bs_0" duration="30"/>
+        <stop busStop="bs_1" duration="30"/>
+        <stop busStop="bs_2" duration="30"/>
+        <stop busStop="bs_3" duration="30"/>
+        <stop busStop="bs_4" duration="30"/>
+        <stop busStop="bs_5" duration="30"/>
+    </route>
+
+    <vehicle id="v_0" type="t_0" depart="0.00" route="r_0"/>
+</routes>

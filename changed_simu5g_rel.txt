@@ -1,0 +1,7 @@
+.settings/language.settings.xml
+simulations/lte/cars/Highway.ned
+simulations/nr/cars/Highway.ned
+src/simu5g/nodes/LteUe.ned
+src/simu5g/nodes/NrCarCustom2.ned
+src/simu5g/nodes/NrCarCustom.ned
+src/simu5g/nodes/NrCarCustomresp.ned

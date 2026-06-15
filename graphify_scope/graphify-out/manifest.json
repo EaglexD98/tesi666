@@ -1,0 +1,87 @@
+{
+  "inet/src/inet/networklayer/configurator/ipv4/HostAutoConfigurator.cc": {
+    "mtime": 1779268788.059569,
+    "ast_hash": "dd83f5f671093a360bec13a1d1c18ad9",
+    "semantic_hash": "dd83f5f671093a360bec13a1d1c18ad9"
+  },
+  "inet/src/inet/networklayer/configurator/ipv4/HostAutoConfigurator.h": {
+    "mtime": 1779201488.704245,
+    "ast_hash": "eaf68b40df2224e174bbf6534c49212d",
+    "semantic_hash": "eaf68b40df2224e174bbf6534c49212d"
+  },
+  "inet/src/inet/networklayer/configurator/ipv4/MyHostAutoConfigurator.cc": {
+    "mtime": 1765368008.864,
+    "ast_hash": "817e7d3574e1cd30e8fe8af1cb8313be",
+    "semantic_hash": "817e7d3574e1cd30e8fe8af1cb8313be"
+  },
+  "inet/src/inet/networklayer/configurator/ipv4/MyHostAutoConfigurator.h": {
+    "mtime": 1765369387.061,
+    "ast_hash": "db54721a60c75fc75996f9e9c339d59e",
+    "semantic_hash": "db54721a60c75fc75996f9e9c339d59e"
+  },
+  "wifi5g-modulecreation/simulations/run": {
+    "mtime": 1763634684.467,
+    "ast_hash": "6ceb6fd8a4b30f8f5d9b7867af5c7362",
+    "semantic_hash": "6ceb6fd8a4b30f8f5d9b7867af5c7362"
+  },
+  "/home/eagle/tesi666/graphify_scope/inet/src/inet/networklayer/configurator/ipv4/HostAutoConfigurator.cc": {
+    "mtime": 1779268788.059569,
+    "ast_hash": "dd83f5f671093a360bec13a1d1c18ad9",
+    "semantic_hash": "dd83f5f671093a360bec13a1d1c18ad9"
+  },
+  "/home/eagle/tesi666/graphify_scope/inet/src/inet/networklayer/configurator/ipv4/HostAutoConfigurator.h": {
+    "mtime": 1779201488.704245,
+    "ast_hash": "eaf68b40df2224e174bbf6534c49212d",
+    "semantic_hash": "eaf68b40df2224e174bbf6534c49212d"
+  },
+  "/home/eagle/tesi666/graphify_scope/inet/src/inet/networklayer/configurator/ipv4/MyHostAutoConfigurator.cc": {
+    "mtime": 1765368008.864,
+    "ast_hash": "817e7d3574e1cd30e8fe8af1cb8313be",
+    "semantic_hash": "817e7d3574e1cd30e8fe8af1cb8313be"
+  },
+  "/home/eagle/tesi666/graphify_scope/inet/src/inet/networklayer/configurator/ipv4/MyHostAutoConfigurator.h": {
+    "mtime": 1765369387.061,
+    "ast_hash": "db54721a60c75fc75996f9e9c339d59e",
+    "semantic_hash": "db54721a60c75fc75996f9e9c339d59e"
+  },
+  "/home/eagle/tesi666/graphify_scope/wifi5g-modulecreation/simulations/run": {
+    "mtime": 1763634684.467,
+    "ast_hash": "6ceb6fd8a4b30f8f5d9b7867af5c7362",
+    "semantic_hash": "6ceb6fd8a4b30f8f5d9b7867af5c7362"
+  },
+  "/home/eagle/tesi666/graphify_scope/CLAUDE.md": {
+    "mtime": 1781187784.229341,
+    "ast_hash": "82efb97a359f5c7290bf2513d14686be",
+    "semantic_hash": "82efb97a359f5c7290bf2513d14686be"
+  },
+  "/home/eagle/tesi666/graphify_scope/MODIFIED_FRAMEWORK_FILES.md": {
+    "mtime": 1781192457.0808096,
+    "ast_hash": "8455f5971102b1aed615d7de1d49b920",
+    "semantic_hash": "8455f5971102b1aed615d7de1d49b920"
+  },
+  "/home/eagle/tesi666/graphify_scope/changed_framework_files.txt": {
+    "mtime": 1781192456.8958018,
+    "ast_hash": "4a99b9983c3b4b92129bc9c3011b516d",
+    "semantic_hash": "4a99b9983c3b4b92129bc9c3011b516d"
+  },
+  "/home/eagle/tesi666/graphify_scope/changed_inet_project.txt": {
+    "mtime": 1781192456.8948016,
+    "ast_hash": "36ac493d1f413168498c17eda36675fd",
+    "semantic_hash": "36ac493d1f413168498c17eda36675fd"
+  },
+  "/home/eagle/tesi666/graphify_scope/changed_inet_rel.txt": {
+    "mtime": 1781192456.8908014,
+    "ast_hash": "5a31591b9765cd8426d6c66fc4f1d25e",
+    "semantic_hash": "5a31591b9765cd8426d6c66fc4f1d25e"
+  },
+  "/home/eagle/tesi666/graphify_scope/changed_simu5g_project.txt": {
+    "mtime": 1781192456.8938017,
+    "ast_hash": "c56839979641812736e7d66ef6a43fbb",
+    "semantic_hash": "c56839979641812736e7d66ef6a43fbb"
+  },
+  "/home/eagle/tesi666/graphify_scope/changed_simu5g_rel.txt": {
+    "mtime": 1781192442.5411983,
+    "ast_hash": "461fb16c2bb9fe0a6d8fc5692ae2816c",
+    "semantic_hash": "461fb16c2bb9fe0a6d8fc5692ae2816c"
+  }
+}

@@ -1,0 +1,11 @@
+<launch>
+  <copy file="osm.net.xml.gz"/>
+  <copy file="osm_pt.rou.xml"/>
+  <copy file="trafico_low.rou.xml"/>
+  <copy file="trafico_medium.rou.xml"/>
+  <copy file="trafico_high.rou.xml"/>
+  <copy file="osm_stops.add.xml"/>
+  <copy file="osm.poly.xml.gz"/>
+  <copy file="osm.view.xml"/>
+  <copy file="osm.sumocfg" type="config"/>  
+</launch>

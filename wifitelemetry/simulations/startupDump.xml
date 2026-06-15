@@ -1,0 +1,12 @@
+<config>
+   <interface hosts="M4miglia.router" names="eth0" address="10.0.0.1" netmask="255.255.0.0" metric="1"/>
+   <interface hosts="M4miglia.router" names="eth1" address="10.1.0.1" netmask="255.255.255.0" metric="1"/>
+   <interface hosts="M4miglia.server" names="eth0" address="10.1.0.2" netmask="255.255.255.0" metric="1"/>
+   <multicast-group hosts="M4miglia.router" interfaces="eth0" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="M4miglia.router" interfaces="eth1" address="224.0.0.1 224.0.0.2"/>
+   <multicast-group hosts="M4miglia.server" interfaces="eth0" address="224.0.0.1 224.0.0.2"/>
+   <route hosts="M4miglia.router" destination="10.1.0.0" netmask="255.255.255.0" gateway="*" interface="eth1" metric="0"/>
+   <route hosts="M4miglia.router" destination="10.0.0.0" netmask="255.255.0.0" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="M4miglia.server" destination="10.1.0.0" netmask="255.255.255.0" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="M4miglia.server" destination="*" netmask="*" gateway="10.1.0.1" interface="eth0" metric="0"/>
+</config>

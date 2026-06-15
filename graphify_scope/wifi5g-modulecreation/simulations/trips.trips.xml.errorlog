@@ -1,0 +1,20 @@
+Warning: Unequal lengths of bidi lane ':1359656440_1_0' and lane ':1359656440_0_0' (21.40 != 4.82).
+Warning: Unequal lengths of bidi lane ':1359711711_1_0' and lane ':1359711711_0_0' (40.93 != 4.70).
+Warning: Unequal lengths of bidi lane ':1359711784_3_0' and lane ':1359711784_2_0' (32.37 != 4.73).
+Warning: Unequal lengths of bidi lane ':1359711822_1_0' and lane ':1359711822_0_0' (23.46 != 4.79).
+Warning: Unequal lengths of bidi lane ':1359729195_1_0' and lane ':1359729195_0_0' (59.39 != 4.63).
+Warning: At actuated tlLogic 'GS_cluster_12676898668_12677319247_597701504', actuated phase 2 has no controlling detector.
+Warning: At actuated tlLogic 'GS_cluster_12676898668_12677319247_597701504', linkIndex 7 has no controlling detector.
+Warning: At actuated tlLogic 'GS_cluster_12676898668_12677319247_597701504', linkIndex 8 has no controlling detector.
+Warning: At actuated tlLogic 'GS_cluster_12676898668_12677319247_597701504', linkIndex 9 has no controlling detector.
+Warning: At actuated tlLogic 'GS_cluster_12676898668_12677319247_597701504', linkIndex 10 has no controlling detector.
+Warning: At actuated tlLogic 'GS_cluster_12676898668_12677319247_597701504', linkIndex 22 has no controlling detector.
+Warning: Program '0' at tlLogic 'cluster_12144725922_12205727172_12205727173_1836986510_#5more' is incompatible with logic at junction 'cluster_12144725922_12205727172_12205727173_1836986510_#5more' (mutual conflict between link indices 45,53 tl indices 45,53 phase 2).
+  To avoid deadlock/collisions, either: rebuild the signal plan with a newer version of netconvert/netedit
+  or rebuild the network with option '--tls.ignore-internal-junction-jam' or include the program when building.
+Warning: At actuated tlLogic 'cluster_12241814315_2653607966_2653607967_2653917278', actuated phase 2 has no controlling detector.
+Warning: Program '0' at tlLogic 'cluster_12643019980_12866425659_12866425681_12866425686_#1more' is incompatible with logic at junction 'cluster_12643019980_12866425659_12866425681_12866425686_#1more' (mutual conflict between link indices 7,13 tl indices 7,13 phase 0).
+  To avoid deadlock/collisions, either: rebuild the signal plan with a newer version of netconvert/netedit
+  or rebuild the network with option '--tls.ignore-internal-junction-jam' or include the program when building.
+Warning: 17 total messages of type: At actuated tlLogic '%', linkIndex % has no controlling detector.
+Warning: 6 total messages of type: Unequal lengths of bidi lane '%' and lane '%' (% != %).

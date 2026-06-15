@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-06 21:53:17 by Eclipse SUMO netedit Version 1.20.0 -->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- ========================================================= -->
+    <!-- Tipo de vehículo WiFi (VeinsInetCar)                      -->
+    <!-- ========================================================= -->
+    <vType id="wifiCar"
+           vClass="passenger"
+           accel="3.0"
+           decel="6.0"
+           maxSpeed="50"
+           color="0,0,255"/>   <!-- azul -->
+
+    <!-- ========================================================= -->
+    <!-- Tipo de vehículo 5G (NrCar – Simu5G)                      -->
+    <!-- ========================================================= -->
+    <vType id="nrCar"
+           vClass="passenger"
+           accel="3.0"
+           decel="6.0"
+           maxSpeed="50"
+           color="255,0,0"/>   <!-- rojo -->
+
+    <!-- ========================================================= -->
+    <!-- Ruta existente                                             -->
+    <!-- ========================================================= -->
+    <route id="loop" edges="E11 -E10 -E9 E8 E11"/>
+
+    <!-- ========================================================= -->
+    <!-- Vehículos (orden de depart no importa para OMNeT++)        -->
+    <!-- ========================================================= -->
+
+    <!-- Vehículo WiFi -->
+    <vehicle id="veh1"
+             type="wifiCar"
+             depart="3.00"
+             route="loop"/>
+
+    <!-- Vehículo 5G -->
+    <vehicle id="veh2"
+             type="nrCar"
+             depart="6.00"
+             route="loop"/>
+
+</routes>
