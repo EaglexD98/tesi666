@@ -1,0 +1,26 @@
+\chapter{Conclusions and Future Work}
+
+% =====================================================================
+% Cierra el contrato abierto en el Capítulo 1. Sin datos nuevos: todo lo que
+% aquí se afirme debe estar respaldado por evidencia ya presentada.
+% =====================================================================
+
+\section{Summary of Contributions}
+\emph{Recapitular las contribuciones enunciadas en la introducción, ahora
+respaldadas por lo construido y lo medido. Una por una, en el mismo orden en que
+se enunciaron.}
+
+\section{Answers to the Research Questions}
+\emph{Responder explícitamente a cada pregunta de investigación del Capítulo 1,
+remitiendo a la evidencia concreta del Capítulo 6 que sostiene cada respuesta.
+Sección corta y directa: es la que el tribunal lee con más atención.}
+
+\section{Limitations of the Study}
+\emph{Recoger las limitaciones de alcance del trabajo, distinguiéndolas de las
+amenazas a la validez ya declaradas en el Capítulo 6: aquí se trata de qué queda
+fuera del estudio, no de qué podría sesgar sus resultados.}
+
+\section{Future Work}
+\emph{Proponer líneas de continuación derivadas de las limitaciones anteriores,
+priorizadas por su valor y no como lista exhaustiva. Cada línea debe conectarse
+con una limitación concreta enunciada previamente.}

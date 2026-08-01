@@ -1,0 +1,45 @@
+\chapter{Evaluation Methodology}
+
+% =====================================================================
+% Define QUÉ se compara y CÓMO se mide. Ningún resultado numérico en este
+% capítulo. Toda métrica presentada en el Capítulo 6 debe estar definida aquí,
+% y ninguna definición de métrica debe aparecer allí.
+% =====================================================================
+
+\section{Evaluated Configurations and Baselines}
+\emph{Definir las cuatro configuraciones comparadas: referencia de acceso celular
+exclusivo, referencia de acceso inalámbrico exclusivo, sistema híbrido con la
+política predictiva, y sistema híbrido con la política predictiva y la extensión
+por plazos. Indicar qué representa cada una como punto del espacio de compromiso
+y qué variable única la separa de su referencia.}
+
+\section{Simulation Scenarios and Operating Conditions}
+\emph{Definir las condiciones bajo las que se evalúan las configuraciones:
+escenario de movilidad, duración, niveles de demanda de tráfico de fondo y
+condiciones de propagación consideradas. Declarar qué se mantiene constante entre
+todas las ejecuciones.}
+
+\section{Delivery and Reliability Metrics}
+\emph{Definir formalmente las métricas de entrega: proporción de datos entregados,
+pérdidas por descarte en memoria frente a pérdidas en el canal, y reparto de la
+carga entre interfaces. Precisar el criterio con que se considera entregado un
+dato.}
+
+\section{Latency and Information Freshness Metrics}
+\emph{Definir el retardo extremo a extremo y, de forma separada, la frescura del
+dato en el momento de su recepción, junto con la proporción de datos que llegan
+dentro de su plazo de validez. Es la métrica que da sentido a la extensión por
+plazos y debe quedar definida sin ambigüedad.}
+
+\section{Energy Metrics}
+\emph{Definir las magnitudes energéticas comparadas: energía total consumida por
+dominio, potencia media y energía por unidad de información útil entregada. Esta
+última es la que permite comparar configuraciones que no entregan el mismo
+volumen de datos.}
+
+\section{Experimental Design and Statistical Treatment}
+\emph{Documentar el diseño experimental: número de repeticiones por
+configuración, gestión de semillas, tratamiento del transitorio inicial, y
+estadísticos e intervalos empleados para presentar los resultados. Declarar el
+criterio con el que se considera significativa una diferencia entre
+configuraciones.}

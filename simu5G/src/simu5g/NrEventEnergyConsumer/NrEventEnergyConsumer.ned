@@ -30,6 +30,11 @@ simple NrEventEnergyConsumer extends CcEnergyConsumerBase
 		@statistic[currentConsumption](title="Current consumption"; source=currentConsumptionChanged; record=vector,last; interpolationmode=sample-hold; unit=A);
         string energySourceModule = default("");
 
+        // Empty = subscribe to the whole node (legacy behavior).
+        // Set to a submodule name (e.g. "cellularNic") to scope signal
+        // capture to the 5G cellular subtree only, excluding wlan[*].
+        string subscriptionScope = default("");
+
         // Nuestros parámetros de Quectel RM520N-GL
         double supplyVoltage @unit(V) = default(3.7 V);
         double connectedSupplyCurrent @unit(mA) = default(51 mA);

@@ -1,0 +1,37 @@
+\chapter{Introduction}
+
+% =====================================================================
+% Se redacta EN ÚLTIMO LUGAR. Este capítulo fija el contrato de la tesis:
+% las preguntas de investigación que aquí se enuncian son exactamente las
+% que el Capítulo 7 debe responder una por una.
+% =====================================================================
+
+\section{Motivation}
+\emph{Situar el problema: la telemetría vehicular continua exige entregar datos
+de forma fiable y suficientemente fresca, pero el acceso celular permanente tiene
+un coste energético que condiciona la autonomía del nodo embarcado. Introducir la
+tensión central de la tesis entre disponibilidad, frescura del dato y energía.}
+
+\section{Problem Statement}
+\emph{Formular el problema con precisión: un vehículo con doble interfaz debe
+decidir, en cada instante, si transmite ahora por la red celular o retiene el dato
+esperando una oportunidad de conectividad inalámbrica futura, bajo capacidad de
+memoria finita y plazos de validez del dato. Enunciar por qué esa decisión no es
+trivial y por qué requiere predicción.}
+
+\section{Objectives and Research Questions}
+\emph{Objetivo general y objetivos específicos, seguidos de las preguntas de
+investigación numeradas. Formularlas de modo que cada una sea contestable con
+evidencia medida en el Capítulo 6; evitar preguntas que solo se puedan responder
+cualitativamente.}
+
+\section{Contributions}
+\emph{Enunciar las contribuciones de forma explícita y numerada: el nodo
+vehicular híbrido, el modelo energético dirigido por eventos, la capa de
+predicción de oportunidades de conectividad, la política de descarga predictiva y
+su extensión sensible a plazos, y la evaluación comparativa frente a las
+referencias de tecnología única.}
+
+\section{Structure of the Thesis}
+\emph{Recorrido breve por los capítulos, indicando la función de cada uno dentro
+del argumento y no solo su título.}

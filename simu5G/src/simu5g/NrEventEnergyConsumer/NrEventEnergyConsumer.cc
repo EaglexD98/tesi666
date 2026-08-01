@@ -41,7 +41,17 @@ void NrEventEnergyConsumer::initialize(int stage)
 
         omnetpp::cModule *parent = getParentModule();
         if (parent != nullptr) {
-            subscribeRecursive(parent);
+            const char *scope = par("subscriptionScope").stringValue();
+            omnetpp::cModule *target = parent;
+            if (scope[0] != '\0') {
+                omnetpp::cModule *sub = parent->getSubmodule(scope);
+                if (sub != nullptr)
+                    target = sub;          // scope capture to e.g. cellularNic
+                else
+                    EV_WARN << "subscriptionScope '" << scope
+                            << "' not found; subscribing to whole node\n";
+            }
+            subscribeRecursive(target);
         }
 
         resetPowerMsg = new omnetpp::cMessage("resetPowerMsg");

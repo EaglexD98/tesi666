@@ -1,0 +1,119 @@
+\documentclass[a4paper,12pt,oneside]{book}
+\linespread{1.5}
+\usepackage{geometry}
+\geometry{top=2cm,bottom=2.5cm,left=3.5cm,right=3.5cm} % Set the margin values.
+\usepackage[utf8]{inputenc}
+\usepackage{tikz,pgf}
+\usepackage{amsfonts}
+\usepackage[english]{babel} %% We instruct LaTeX to use the English language.
+\usepackage{todonotes}
+\usepackage{subfig}
+\usepackage{fancyhdr}
+\setlength{\parindent}{0cm}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{numprint}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tocbibind}
+\setcounter{tocdepth}{3}
+\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\fancyhead[L]{}
+\fancyfoot[C]{\thepage}
+
+\graphicspath{{imgs/}} %% folder from which the images are taken %%
+
+\setlength {\marginparwidth }{2cm}
+\pgfplotsset{compat=1.16}
+
+\newenvironment{dedication}
+  {\clearpage           % we want a new page
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+   {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+
+\begin{document}
+%% Title page %%
+\begin{titlepage}
+    \begin{center}
+    \vspace*{0.2cm}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{imgs/logo.png}
+    \end{figure}
+        \vspace{5mm}
+%% Department %%
+        \uppercase{\normalsize Department of Computer Engineering, Modelling, Electronics and Systems Science}\\
+    \end{center}
+    \begin{center}
+%% Degree Programme %%
+        \large{ Degree Programme in (insert programme)}\\
+        \vspace{3mm}
+        \large{\bf Degree Thesis}\\
+        \vspace{10mm}
+%% Thesis Title %%
+    {\LARGE{\bf Thesis Title (insert title)}}\\
+     \vspace{7mm}
+    \end{center}
+
+    \vspace{25mm}
+    \noindent
+    \begin{minipage}[t]{0.47\textwidth}
+%% Supervisor %%
+        {\large{ Supervisor:\vspace*{0.22cm}\\\bf Prof. \\Name Surname}}
+        \vspace{12mm}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.4\textwidth}\raggedleft
+%% Candidate %%
+        {\large{Candidate: \\ \bf Name Surname\\ Student ID 123456}}
+    \end{minipage}
+
+    \vspace{30mm}
+
+%% Academic Year %%
+    \centering{\large \uppercase{ Academic Year 12/34}}
+
+\end{titlepage}
+
+\begin{dedication}
+Insert dedication and acknowledgements...
+\end{dedication}
+
+%% Body of the thesis %%
+
+%%\chapter*{Abstract} %% Here we insert the abstract of our document. %%
+%%Insert abstract: ...
+
+
+\tableofcontents
+\input{capitoli/capitolo1}
+\input{capitoli/capitolo2}
+\input{capitoli/capitolo3}
+\input{capitoli/capitolo4}
+\input{capitoli/capitolo5}
+\input{capitoli/capitolo6}
+\input{capitoli/capitolo7}
+
+\begin{thebibliography}{100} %% 100 is the maximum number of entries in the bibliography: it can be changed as you prefer. %%
+\bibitem{[1]:}
+Insert the bibliography here...
+\bibitem{[2]:}
+Insert the bibliography here...
+
+\end{thebibliography}
+\end{document}

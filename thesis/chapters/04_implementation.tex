@@ -1,0 +1,332 @@
+\chapter{Implementation}
+
+% =====================================================================
+% NOTA DE USO
+% Los títulos (\section / \subsection) están en inglés y son los definitivos.
+% El texto en cursiva es SOLO una guía de contenido en español: bórralo al
+% redactar.
+%
+% CRITERIO DE ALCANCE DE ESTE CAPÍTULO:
+%   - SÍ: artefactos construidos, decisiones de realización, parámetros,
+%     estructura del código, mecanismos que garantizan la validez del montaje.
+%   - NO: qué son los frameworks (Background), por qué se eligió la política
+%     de decisión y su formulación (Design), definición de los escenarios
+%     evaluados y sus resultados (Evaluation).
+% Regla de corte: si una frase seguiría siendo cierta aunque no se hubiera
+% escrito una sola línea de código, no pertenece a este capítulo.
+% =====================================================================
+
+\emph{Párrafo introductorio: declarar explícitamente el alcance del capítulo.
+Indicar que los frameworks de simulación se describen en el capítulo de
+fundamentos y que la formulación de la política de decisión se desarrolla en el
+capítulo de diseño, de modo que aquí se documenta únicamente su realización: qué
+módulos se construyeron, qué código se extendió, qué se reutilizó sin modificar y
+qué mecanismos garantizan que el montaje produce medidas válidas. Anticipar el
+orden: primero la infraestructura, después el nodo y sus modelos, después la
+aplicación y las capas de decisión, y por último la instrumentación y la
+verificación del propio software.}
+
+% =====================================================================
+\section{Implementation Overview}
+% =====================================================================
+
+\subsection{Developed, Extended and Reused Components}
+\emph{Tabla-resumen que abre el capítulo y lo hace navegable: cada componente
+clasificado en desarrollado desde cero, extendido a partir de código existente o
+reutilizado sin modificar, con la sección del capítulo donde se detalla. Es la
+sección que delimita con precisión la contribución de ingeniería propia frente a
+lo heredado de los frameworks.}
+
+\subsection{Integration of the INET, Simu5G and Veins Code Bases}
+\emph{Documentar los puntos de fricción concretos que hubo que resolver para que
+las tres bases de código coexistieran en un mismo nodo y una misma compilación:
+alineación de versiones, conflictos entre la pila IP de INET y la pila celular de
+Simu5G, y uso de la movilidad externa dentro de un nodo celular. Solo problemas
+reales y su solución, sin describir los frameworks.}
+
+\subsection{Project Layout and Build Organisation}
+\emph{Describir la organización del proyecto propio y su enlazado contra los tres
+frameworks, la separación entre código, escenarios y resultados, y el criterio de
+mantener acotadas y trazables las modificaciones realizadas sobre el código base
+externo.}
+
+% =====================================================================
+\section{Mobility Scenario Construction}
+% =====================================================================
+
+\subsection{Road Network Generation from Cartographic Data}
+\emph{Documentar el proceso seguido para obtener la red viaria del área de
+estudio a partir de datos cartográficos abiertos: delimitación del área,
+conversión al formato del simulador de tráfico, filtrado de tipos de vía y
+depuración de la red resultante. Indicar las correcciones manuales necesarias.}
+
+\subsection{Route, Stop and Traffic Demand Definition}
+\emph{Describir la construcción de los ficheros de escenario: la ruta del
+vehículo instrumentado, la declaración de sus paradas y la generación del tráfico
+de fondo. Aquí se documenta cómo se generan los ficheros; la elección de qué
+niveles de demanda se evalúan pertenece al capítulo de evaluación.}
+
+\subsection{Building-Based Obstacle Generation}
+\emph{Documentar la extracción de la geometría de edificios y su conversión al
+formato de obstáculos consumido por el modelo de propagación, incluyendo el
+procesamiento intermedio que fue necesario implementar.}
+
+\subsection{Runtime Coupling and Exposed Mobility State}
+\emph{Describir el acoplamiento en ejecución entre el simulador de tráfico y el
+de red: sincronización temporal, instanciación dinámica de nodos y, sobre todo,
+qué variables de movilidad quedan accesibles a los módulos de aplicación
+(posición, velocidad, estado e identificador de parada). Esta última parte es la que
+enlaza con la capa de predicción.}
+
+% =====================================================================
+\section{Hybrid Vehicular Node}
+% =====================================================================
+
+\subsection{Extension of the NR User Equipment with an IEEE 802.11 Interface}
+\emph{Núcleo estructural del capítulo. Documentar el módulo compuesto construido
+por extensión del equipo de usuario celular: submódulos añadidos, puertas de
+radio declaradas, tipo de gestión inalámbrica empleado y conexión de la nueva
+interfaz a la capa de red heredada. Incluir el diagrama del nodo y el fragmento
+de definición del módulo.}
+
+\subsection{Dual-Stack Addressing and Interface Binding}
+\emph{Documentar la configuración que permite a un mismo nodo mantener
+direcciones activas sobre ambas interfaces, y el mecanismo por el que se fuerza
+que cada paquete salga por la interfaz que decide la aplicación y no por la que
+seleccionaría el encaminamiento por defecto. Es un requisito sin el cual la
+decisión de descarga sería inefectiva.}
+
+\subsection{Infrastructure and Server-Side Modules}
+\emph{Describir los módulos del lado fijo tal como quedaron configurados: puntos
+de acceso asociados a las paradas, estación base celular, red de transporte y
+servidor de recolección único. Indicar la ubicación de los elementos y los
+parámetros de radio comunes.}
+
+% =====================================================================
+\section{Event-Driven Energy Consumption Model}
+% =====================================================================
+
+\subsection{Consumer Module Structure and Signal Subscription}
+\emph{Documentar el módulo consumidor implementado: su punto de anclaje en la
+jerarquía del nodo, el conjunto de señales de actividad a las que se suscribe y
+el alcance de la suscripción. Enumerar las señales en una tabla.}
+
+\subsection{Activity Classification and Current-State Transitions}
+\emph{Describir la máquina de estados implementada: cómo cada señal se clasifica
+en actividad de transmisión o recepción, cómo se resuelve la concurrencia entre
+ambas, y el temporizador que devuelve el consumo al nivel base ante la ausencia
+de actividad.}
+
+\subsection{Energy-Domain Isolation in a Dual-Interface Node}
+\emph{Sección crítica y de aportación propia. Documentar el problema detectado al
+instalar el modelo energético celular en un nodo que también incorpora interfaz
+inalámbrica —las señales de esta última activan el consumidor celular e inflan su
+consumo— y la solución implementada para que cada dominio contabilice
+exclusivamente su propio tráfico. Argumentar que sin esta corrección ninguna
+comparación energética entre alternativas sería válida.}
+
+\subsection{Battery Coupling and Recorded Energy Quantities}
+\emph{Documentar la integración de carga en el tiempo, el acoplamiento con el
+módulo de almacenamiento y las magnitudes finales registradas por cada dominio
+energético, que son las que alimentan el capítulo de resultados.}
+
+\subsection{Energy Parameter Set}
+\emph{Presentar la tabla de parámetros efectivamente configurados en ambos
+dominios (tensión de alimentación y corrientes de reposo, recepción y
+transmisión), indicando su procedencia documental.}
+
+% =====================================================================
+\section{Hybrid Telemetry Application}
+% =====================================================================
+
+\subsection{Module Structure: Sender and Per-Technology Receivers}
+\emph{Documentar la arquitectura implementada: emisor embarcado con acceso a
+ambas interfaces y receptores diferenciados por tecnología en el servidor, con su
+convergencia en un registro unificado de recepción. Incluir el diagrama de
+módulos y sus interconexiones.}
+
+\subsection{Message Definitions and Telemetry Metadata}
+\emph{Documentar los formatos de mensaje definidos para cada categoría de datos,
+sus tamaños lógicos, y los metadatos incorporados que permiten seguir cada
+paquete extremo a extremo (identificadores, marcas de tiempo de generación,
+interfaz de salida).}
+
+\subsection{Finite Buffers and Overflow Handling}
+\emph{Documentar la implementación de los buffers por categoría, la contabilidad
+de ocupación en bytes, la política aplicada al saturarse y el registro de los
+descartes producidos.}
+
+\subsection{Interface Dispatch and Transmission Pacing}
+\emph{Documentar cómo se materializa una decisión de encaminamiento sobre un
+paquete concreto: selección de interfaz, extracción ordenada del buffer y
+espaciado entre envíos, justificando este último por la saturación de colas
+observada al enviar en ráfaga.}
+
+\subsection{Acknowledgement, Retransmission and Duplicate Filtering}
+\emph{Documentar la capa de fiabilidad implementada sobre datagramas:
+confirmaciones agregadas, detección de pérdidas por número de secuencia,
+retransmisión y filtrado de duplicados en recepción. Indicar los parámetros
+configurables de esta capa.}
+
+\subsection{Connectivity Transitions and In-Flight Data Recovery}
+\emph{Documentar el tratamiento de la entrada y salida de cobertura: eventos de
+asociación y desasociación, recuperación de los datos que quedaron en tránsito y
+garantía de que ningún dato queda retenido en una interfaz ya no disponible.}
+
+\subsection{Reliable-Transport Variant}
+\emph{Documentar la variante de transporte fiable como adaptación mínima del
+mismo diseño, precisando exactamente qué cambia y qué permanece idéntico, el
+mecanismo de recuperación de sesión en los cambios de interfaz y la contabilidad
+separada de la sobrecarga de tramado.}
+
+% =====================================================================
+\section{Prediction Layer Implementation}
+% =====================================================================
+
+\subsection{Offline Profile Extraction from Reference Runs}
+\emph{Documentar el procedimiento implementado para construir los perfiles
+históricos: ejecuciones de referencia del escenario, extracción de tiempos entre
+paradas y de la duración efectiva de las ventanas de cobertura, y las
+herramientas desarrolladas para ello.}
+
+\subsection{Profile Data Format and Configured Percentiles}
+\emph{Documentar el formato de los perfiles resultantes y los percentiles
+efectivamente configurados para cada magnitud. La justificación del criterio de
+percentiles corresponde al capítulo de diseño: aquí se indican los valores
+adoptados y dónde se consumen.}
+
+\subsection{Runtime Estimator Module}
+\emph{Documentar el módulo que produce la estimación durante la simulación:
+entradas de movilidad que consume, selección del siguiente punto de cobertura
+válido, salidas expuestas al emisor y cadencia de actualización.}
+
+\subsection{Live-Signal Arbitration and Fallback Behaviour}
+\emph{Documentar dos mecanismos de robustez implementados: la prioridad de la
+observación real de asociación sobre la predicción histórica cuando el vehículo
+ya se encuentra en cobertura, y la degradación controlada ante perfiles o puntos
+de cobertura ausentes, que emite advertencia sin detener la simulación.}
+
+% =====================================================================
+\section{Offloading Policy Implementation}
+% =====================================================================
+
+\subsection{Framework-Independent Decision Engine}
+\emph{Documentar la decisión de realización más relevante de esta sección:
+implementar el motor de decisión como componente sin dependencias del simulador,
+lo que permite verificarlo de forma aislada y reutilizarlo sin modificación
+dentro del emisor. Describir su interfaz de entrada y salida.}
+
+\subsection{Category Registration and Per-Tick Input Assembly}
+\emph{Documentar la generalización a un conjunto ordenado de categorías de datos
+y cómo el emisor compone, en cada ciclo, el vector de entrada del motor a partir
+del estado de los buffers y de la estimación vigente.}
+
+\subsection{Discretisation of the Offloading Volume into Packets}
+\emph{Documentar la conversión de la magnitud continua que produce la
+formulación en un número entero de paquetes efectivamente enviables, y el
+tratamiento del residuo. Es el punto donde la formulación teórica se vuelve
+ejecutable.}
+
+\subsection{Policy Execution Cycle and Drain Ordering in the Sender}
+\emph{Documentar la ejecución periódica de la política dentro del emisor, su
+independencia respecto de la cadencia de generación de datos, el orden de
+prioridad entre categorías al vaciar y la ejecución efectiva del vaciado sobre
+cada interfaz.}
+
+\subsection{Deadline-Driven Rescue Layer}
+\emph{Documentar la realización de la extensión por plazos: réplica de los plazos
+en el emisor, evaluación de la condición de rescate en cada ciclo y las trazas
+específicas que produce. La motivación y la formulación corresponden al capítulo
+de diseño.}
+
+\subsection{Precedence Between the Two Decision Layers}
+\emph{Documentar cómo conviven ambas capas sobre el mismo emisor y qué regla de
+precedencia se implementó cuando ambas concluyen simultáneamente, ya que de ello
+depende el comportamiento observado en los resultados.}
+
+\subsection{Boundary Cases and Safe Degradation}
+\emph{Documentar los casos límite tratados explícitamente en el código: fin de
+recorrido sin oportunidades futuras, arranque del sistema y ausencia de
+predicción, argumentando que el sistema degrada de forma segura en todos ellos.}
+
+% =====================================================================
+\section{Configuration Management and Experimental Control}
+% =====================================================================
+
+\subsection{Single Base Configuration and Variant Derivation}
+\emph{Documentar el mecanismo por el que todas las variantes se derivan por
+herencia de una única configuración base, de modo que un cambio en el escenario
+común alcanza simultáneamente a todas ellas y no puede producirse deriva entre
+configuraciones. La definición de qué variantes se evalúan pertenece al capítulo
+de evaluación.}
+
+\subsection{Enforcing the Single-Difference Principle}
+\emph{Documentar cómo la implementación garantiza que cada variante difiere de su
+referencia en un único conmutador, y por qué esta propiedad —que es una decisión
+de implementación, no de análisis— es la que hace comparables las mediciones
+posteriores.}
+
+\subsection{Exposed Parameters and Their Default Values}
+\emph{Presentar en una tabla los parámetros que la implementación expone a la
+experimentación, con su valor por defecto y el módulo que los consume. Sirve de
+referencia cruzada para el capítulo de evaluación.}
+
+% =====================================================================
+\section{Instrumentation and Data Collection}
+% =====================================================================
+
+\subsection{Per-Packet and Per-Event Logging Infrastructure}
+\emph{Documentar el sistema de trazas implementado y enumerar los registros
+producidos: transmisión, recepción, desbordamiento, ocupación de buffer,
+decisiones de la política, eventos de parada y de fiabilidad. Justificar la
+necesidad de trazabilidad por paquete frente a los agregados nativos.}
+
+\subsection{Native Statistics and Energy Scalars}
+\emph{Documentar las magnitudes registradas mediante los mecanismos estadísticos
+propios del simulador y de los modelos energéticos, cuyo papel es servir de
+fuente independiente frente a los contadores de la aplicación.}
+
+\subsection{Output Isolation Across Configuration Variants}
+\emph{Documentar el esquema de nombrado de ficheros de salida que impide que una
+variante sobrescriba los resultados de otra. Conviene declarar que responde a un
+problema real detectado durante el desarrollo.}
+
+\subsection{Post-Processing Tooling}
+\emph{Documentar las herramientas desarrolladas para transformar las trazas
+crudas en las métricas finales: agregación por ejecución, cálculo de las
+magnitudes de entrega, retardo, frescura, desbordamiento y energía, y generación
+de las tablas consumidas por el capítulo de resultados.}
+
+% =====================================================================
+\section{Verification of the Implementation}
+% =====================================================================
+
+\subsection{Stand-Alone Testing of the Decision Engine}
+\emph{Documentar la verificación del motor de decisión fuera del simulador,
+con casos construidos para cubrir umbrales y casos límite. Es lo que sostiene la
+afirmación de que un comportamiento observado en los resultados procede del
+escenario y no de un error de cálculo.}
+
+\subsection{Offline Replay Validation of the Prediction Layer}
+\emph{Documentar la validación de la capa de predicción por reproducción sobre
+trazas reales, comparando la estimación producida con la ventana de cobertura
+efectivamente observada, y el criterio de aceptación aplicado.}
+
+\subsection{Consistency Checks Against Native Simulator Statistics}
+\emph{Documentar la verificación cruzada entre los contadores propios de la
+aplicación y las estadísticas nativas del simulador, y el umbral de discrepancia
+por debajo del cual una ejecución se considera consistente.}
+
+\subsection{Reproducibility: Seeds, Repetitions and Run Identification}
+\emph{Documentar la gestión de semillas, el mecanismo de repeticiones y el
+esquema de identificación de ejecuciones que permite reproducir exactamente
+cualquier resultado presentado en la tesis.}
+
+% =====================================================================
+\section{Implementation Constraints and Deviations from the Design}
+% =====================================================================
+\emph{Sección de cierre breve y estrictamente acotada: recoger únicamente las
+simplificaciones introducidas al implementar y los puntos en que la realización
+se aparta del diseño formulado, indicando en cada caso por qué la desviación es
+aceptable y qué efecto tiene sobre los resultados. Las limitaciones generales del
+estudio corresponden al capítulo de conclusiones y no deben repetirse aquí.}

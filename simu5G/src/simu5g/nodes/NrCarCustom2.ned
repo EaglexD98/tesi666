@@ -7,7 +7,7 @@ module NrCarCustom2 extends NrUe
 
 {
     parameters:
-        @display("i=device/car;bgb=937,664");
+        @display("i=misc/bus_vl;bgb=937,664");
         int numWlanInterfaces = default(1);
         wlan[*].mgmt.typename = default("Ieee80211MgmtAdhoc");
         wlan[*].agent.typename = default("");

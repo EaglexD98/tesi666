@@ -1,0 +1,51 @@
+\chapter{System Model and Decision Policy Design}
+
+% =====================================================================
+% Capítulo portante de la contribución teórica. TODAS las variables,
+% ecuaciones y criterios de decisión viven aquí; el Capítulo 4 únicamente
+% los realiza. Regla de corte: si una ecuación aparece también en el
+% Capítulo 4, sobra en uno de los dos.
+% =====================================================================
+
+\section{Scenario and System Model}
+\emph{Definir formalmente el escenario: nodo móvil con doble interfaz, ruta con
+paradas, infraestructura inalámbrica asociada a las paradas, cobertura celular
+continua y servidor de recolección único. Introducir la notación que se usará en
+todo el capítulo.}
+
+\section{Assumptions and Design Constraints}
+\emph{Enunciar explícitamente los supuestos: ruta conocida y repetitiva,
+generación de datos por categorías con tasa conocida, memoria finita por
+categoría, y disponibilidad de un historial de recorridos previos. Cada supuesto
+debe justificarse por su plausibilidad operativa, no por conveniencia
+matemática.}
+
+\section{Characterisation of WiFi Communication Opportunities}
+\emph{Definición conceptual clave de la tesis: la oportunidad de comunicación no
+coincide con la parada física, sino con la ventana en que el nodo dispone
+efectivamente de conectividad, que comienza antes de detenerse y persiste tras
+reanudar la marcha. Formalizar la ventana y sus magnitudes.}
+
+\section{Prediction of the Time to the Next Communication Opportunity}
+\emph{Formular la estimación del tiempo hasta la próxima oportunidad y del tiempo
+restante dentro de ella a partir de estadística histórica. Justificar aquí el
+criterio de percentiles y su asimetría según el sentido del riesgo, y definir los
+indicadores de fiabilidad asociados a la estimación.}
+
+\section{Buffer Survival Condition and Minimum Offloading Volume}
+\emph{Núcleo analítico de la política: formular, por categoría, la condición que
+determina si la memoria disponible sobrevive hasta la siguiente evaluación y, en
+caso negativo, el volumen mínimo que debe transmitirse por la interfaz costosa.
+Introducir el horizonte de decisión y el factor de seguridad.}
+
+\section{Deadline-Driven Rescue Condition}
+\emph{Formular la segunda dimensión de la decisión: un dato debe transmitirse por
+la interfaz costosa cuando la oportunidad prevista no llega dentro de su plazo de
+validez, considerando un margen de guarda. Justificar por qué la condición de
+supervivencia de memoria no cubre este caso.}
+
+\section{Complete Formulation of the Offloading Policy}
+\emph{Integrar ambas condiciones en una política única: precedencia entre ellas,
+comportamiento en los casos límite y enunciado final del algoritmo en
+pseudocódigo. Cerrar indicando qué propiedades se espera que exhiba, que son las
+que el Capítulo 6 contrastará empíricamente.}
