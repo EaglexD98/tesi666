@@ -1,0 +1,3 @@
+[submodule "wifi5g-modulecreation"]
+	path = wifi5g-modulecreation
+	url = https://github.com/EaglexD98/wifi5g-modulecreation.git

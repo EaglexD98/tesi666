@@ -541,6 +541,19 @@ void Ip2Nic::signalHandoverCompleteTarget(MacNodeId ueId, MacNodeId sourceEnb)
 {
     Enter_Method("signalHandoverCompleteTarget");
 
+    // A gNB that has just become the serving target must never retain a
+    // forwarding rule left by an earlier handover of the same UE.  Such a
+    // stale rule can survive a rapid A->B->A ping-pong when the X2 completion
+    // notification for B->A is delayed, causing every downlink packet arriving
+    // at the correct gNB to be sent straight back to the old one.
+    auto staleForwarding = hoForwarding_.find(ueId);
+    if (staleForwarding != hoForwarding_.end()) {
+        EV_WARN << NOW << " Ip2Nic::signalHandoverCompleteTarget - clearing stale forwarding state for UE "
+                << ueId << " (old target " << staleForwarding->second << ") because this gNB is now the target"
+                << endl;
+        hoForwarding_.erase(staleForwarding);
+    }
+
     // signal the event to the source eNB
     if (!hoManager_)
         hoManager_.reference(this, "handoverManagerModule", true);
@@ -647,4 +660,3 @@ void Ip2Nic::finish()
 }
 
 } //namespace
-
