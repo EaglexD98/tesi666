@@ -15,7 +15,9 @@ regenerables y pueden ocupar decenas de GB.
 ## Clonar
 
 ```bash
-git clone --recurse-submodules URL_PRIVADA_DE_TESI666
+gh auth login -h github.com
+gh auth setup-git
+git clone --recurse-submodules https://github.com/EaglexD98/tesi666.git
 cd tesi666
 ```
 
@@ -31,7 +33,7 @@ Instalar primero Git, Python, `pipx` y SUMO. En Ubuntu/Debian:
 
 ```bash
 sudo apt update
-sudo apt install -y git pipx sumo sumo-tools
+sudo apt install -y git gh pipx sumo sumo-tools
 pipx ensurepath
 pipx install opp-env
 ```
@@ -44,7 +46,9 @@ mkdir -p "$HOME/omnet-workspace"
 cd "$HOME/omnet-workspace"
 opp_env init
 opp_env install omnetpp-6.2.0
-git clone --recurse-submodules URL_PRIVADA_DE_TESI666 tesi666
+gh auth login -h github.com
+gh auth setup-git
+git clone --recurse-submodules https://github.com/EaglexD98/tesi666.git tesi666
 ```
 
 En la maquina original el entorno se activa con:
