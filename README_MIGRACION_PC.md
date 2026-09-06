@@ -80,3 +80,6 @@ wifi5g-modulecreation/RUNBOOK_SIMULACIONES_PARA_CODEX.md
 
 El runbook contiene configuraciones, semillas, bloques, limites de paralelismo,
 respaldo, monitorizacion y validacion.
+
+Para extraer las tablas que se pueden graficar en otra computadora, consultar
+`README_EXTRACCION_DATOS.md` en la raíz del repositorio.
