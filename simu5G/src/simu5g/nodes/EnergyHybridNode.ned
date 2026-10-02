@@ -35,26 +35,26 @@ import inet.common.lifecycle.NodeStatus;
 //
 module EnergyHybridNode extends NrCarCustom2
 {
-    @display("bgb=959,658");
+    @display("bgb=1274,657");
     submodules:
         // Node lifecycle status, required by the Cc batteries to operate.
         status: NodeStatus {
-            @display("p=58,236;i=block/control");
+            @display("p=126,98;i=block/control");
         }
 
         // 5G battery (plain; the 5G consumer records its own energy scalars).
         energyStorage5g: SimpleCcBattery {
-            @display("p=654,40;i=block/battery");
+            @display("p=1165,257;i=misc/battery");
         }
 
         // 5G event-based consumer (scoped to cellularNic via omnetpp.ini).
         energyConsumer5g: NrEventEnergyConsumer {
-            @display("p=849,40;i=block/plug");
+            @display("p=1165,58;i=block/plug");
         }
 
         // WiFi battery (records consumption scalars in finish()); the state-based
         // radio consumer that drains it lives inside wlan[*].radio.energyConsumer.
         energyStorageWifi: WifiBattery {
-            @display("p=69,40;i=block/battery");
+            @display("p=1166,147;i=misc/battery");
         }
 }

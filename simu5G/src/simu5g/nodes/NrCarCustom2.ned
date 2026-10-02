@@ -7,7 +7,7 @@ module NrCarCustom2 extends NrUe
 
 {
     parameters:
-        @display("i=misc/bus_vl;bgb=937,664");
+        @display("i=misc/bus_vl;bgb=1133,664");
         int numWlanInterfaces = default(1);
         wlan[*].mgmt.typename = default("Ieee80211MgmtAdhoc");
         wlan[*].agent.typename = default("");
@@ -21,7 +21,7 @@ module NrCarCustom2 extends NrUe
     submodules:
         wlan[numWlanInterfaces]: <default("Ieee80211Interface")> like IWirelessInterface {
             parameters:
-                @display("p=826,505,row,100;q=queue");
+                @display("p=1018,585,row,100;q=queue");
         }
     connections allowunconnected:
 
